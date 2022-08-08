@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+<style>
+	ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: indigo;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+df-messenger {
+   --df-messenger-bot-message: purple;
+   --df-messenger-button-titlebar-color: purple;
+   --df-messenger-chat-background-color: white;
+   --df-messenger-font-color: white;
+   --df-messenger-send-icon: rgb(82,46,107);
+   --df-messenger-user-message: indigo;
+  }
+
+
+        
+
+</style>
+<head>
+	<title>login</title>
+	<script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+	<meta name="viewport" content="width-device-width, initial-scale=1">
+	<ul>
+		<li><a class="active" href="{% url 'feedback' %}"><i class=" fa fa-comments"></i>Feedback</a></li>
+		<li><a class="active" href="{% url 'about' %}">About us</a></li>
+		<li><a class="active" href="{% url 'index' %}"><i class=" fa fa-home"></i>Home</a></li>
+	</ul>
+	<img src="/static/login.jpg" height=450px; width=460px;>
+	<div class="container">
+		<div class="header">
+			<h1>Login</h1>
+		</div>
+		<div class="main">
+			<form method="GET">
+				<span>
+					<i class ="fa fa-user"></i>
+					<input type="email" id="email" placeholder="Enter Email id" name="name" required>
+				</span><br>
+				<span>
+					<i class ="fa fa-lock"></i>
+					<input type="password" id="password" placeholder="Password" name="word" required>
+				</span>
+				<br>
+				<button formaction="validate">Login</button>
+
+			</form>
+		</div>
+		</div>
+		<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="Instant_labor"
+  agent-id="48df05c4-b3fc-4041-92cc-5935ff246574"
+  language-code="en"
+></df-messenger>
+	</body>
+</html>

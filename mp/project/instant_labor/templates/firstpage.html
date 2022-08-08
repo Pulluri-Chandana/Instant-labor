@@ -1,0 +1,64 @@
+{% load static %}
+<html>
+	<script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+<style>
+	body {
+		font-family: system-ui;
+        font-size: medium;
+        font-weight: bold;
+	}
+	.container {
+	margin: -5% auto;
+	color: black;
+	text-align: center;
+	top: 15%;
+}
+
+	.header {
+	text-align: center;
+	padding-top: 10px;
+}
+.header h2 {
+	color: darkorchid ;
+	font-size: 25px;
+	margin-bottom: 45px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: indigo;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
+<body>
+	<ul>
+		<li><a class="active" href="{% url 'feedback' %}"><i class=" fa fa-comments"></i>Feedback</a></li>
+		<li><a class="active" href="{% url 'about' %}">About us</a></li>
+		<li><a class="active" href="{% url 'index' %}"><i class=" fa fa-home"></i>Home</a></li>
+	  </ul>
+	<img src="/static/choice.jpg" width=450px>
+	<div class="container">
+		<div class="header">
+    <h2>Want to find a job that match up your skills? <a href="{% url 'worker' %}">Click here</a> </h2>
+    <h2>Want to hire people?<a href="{% url 'owner' %}"> Click here</a></h2>
+</div>
+</div>
+</body>
+</html>

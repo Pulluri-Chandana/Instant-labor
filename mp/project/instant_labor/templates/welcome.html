@@ -1,0 +1,131 @@
+{% load static %}
+<html>
+  <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: indigo;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+marquee{
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.multicolortext {
+        background-image: linear-gradient(to left, violet, indigo);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 90px;
+      }
+      h1{
+      text-align: center;
+       position: absolute;
+        top: 200px; 
+        left: 390px;
+    }
+#large
+    {
+    	font-size: 90px;
+    }
+    body
+    {
+        font-family: sans-serif;
+    }
+    #loginb
+    {
+        position: absolute;
+        left: 600px;
+        top: 400px;
+        padding: 10px 0;
+        border-radius: 5px;
+        width: 15%;
+        background: linear-gradient(to left, violet, indigo);
+        -webkit-background: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: white;
+        font-size: 30px;
+    }
+    df-messenger {
+   --df-messenger-bot-message: purple;
+   --df-messenger-button-titlebar-color: purple;
+   --df-messenger-chat-background-color: white;
+   --df-messenger-font-color: white;
+   --df-messenger-send-icon: rgb(82,46,107);
+   --df-messenger-user-message: indigo;
+  }
+    #signinb
+    {
+        position: absolute;
+        left: 600px;
+        top: 500px;
+        padding: 10px 0;
+        border-radius: 5px;
+        width: 15%;
+        background: linear-gradient(to left, violet, indigo);
+        -webkit-background: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: white;
+        font-size: 30px;
+        
+    }
+    .img1
+    {
+         float:"right";
+    }
+</style>
+
+<body>
+  <ul>
+    <li><a class="active" href="{% url 'feedback' %}"><i class=" fa fa-comments"></i>Feedback</a></li>
+    <li><a class="active" href="{% url 'about' %}">About us</a></li>
+    <li><a class="active" href="{% url 'index' %}"><i class=" fa fa-home"></i>Home</a></li>
+  </ul>
+  <img  src="/static/labor.jpg"class="img1" style="float :right" height=500px; width=400px; top=50px; >
+    <form>
+        <h1>
+          <span class="multicolortext"><i>INSTANT   LABOR</i></span>
+        </h1>
+	<!--<img src="icon.jpeg" height= "300" width="100" style="width:20%" >-->
+    <marquee direction="right"  height="400" width="100" style="width:50%"  >A labor's friend</marquee>
+    <!--<input type="button" value="Login" id="submit" height="200" weight="200" onclick="validate()"/>-->
+    <input type="submit" name = "login" value="Login" id="loginb" formaction="login"/>
+    <input type="submit" value="Sign in" name ="signin" id="signinb" formaction="signin"/>
+    <!--<button id="loginb" type="button" height="1000" width="1000">Click me!</button> -->
+    </form>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="Instant_labor"
+  agent-id="48df05c4-b3fc-4041-92cc-5935ff246574"
+  language-code="en"
+></df-messenger>
+  </body>
+</html>

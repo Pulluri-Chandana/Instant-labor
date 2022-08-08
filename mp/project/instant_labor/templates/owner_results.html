@@ -1,0 +1,181 @@
+<html>
+  <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    <style>
+      h1
+      {
+        color : indigo
+      }
+.container {
+    width: 400px;
+    height: 480px;
+    background-color: rgba(0,0,0,0.1);
+    border-color: indigo;
+    
+	  color: black;
+    padding-left:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:10px ;
+    top: 15%;
+    float:left;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: indigo;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.fdropdown .fdropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.navbar a:hover, .fdropdown:hover .fdropbtn {
+  background-color: black;
+}
+
+.fdropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.fdropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.fdropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.fdropdown:hover .fdropdown-content {
+  display: block;
+}
+
+</style>
+<body>
+  <ul>
+    <li><div class="fdropdown">
+      <button class="fdropbtn"> <i class="fa fa-comments"></i>feedback</button>
+      <div class="fdropdown-content">
+        <a href="{% url 'feedback' %}"  >Give Feed</button> 
+        <a href="{% url 'feedback_results' %}">Check Feed</a>
+      </div>
+    </div> 
+    </li>
+    <li><a class="active" href="{% url 'about' %}">About us</a></li>
+      <li><a class="active" href="{% url 'index' %}"><i class=" fa fa-home"></i>Home</a></li>
+      <div class="dropdown">
+        <button class="dropbtn">Skills
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="{% url 'general_worker_chef' %}"  >Chef</button> 
+          <a href="{% url 'general_worker_electrician' %}">Electrian</a>
+          <a href="{% url 'general_worker_beautician' %}">Beautician</a>
+          <a href="{% url 'general_worker_singer' %}">Singing</a>
+          <a href="{% url 'general_worker_dancer' %}">Dancing</a>
+          <a href="{% url 'general_worker_sales' %}">Sales men</a>
+        </div>
+      </div> 
+    </ul>
+<h1  >Best Matches are:
+
+</h1>
+<form>
+{% for labor in workerList %}
+
+<div class="container">
+    <img src="/static/worker.jpeg" height=200px width=200px>
+<p>First Name         : {{labor.fname}}</p>
+<p>Last Name          : {{labor.lname}}</p>
+<p>Skills they posses : {{labor.skills}}</p>
+<p>Contact no         : {{labor.contact_no}}</p>
+<p>Email              : <button name="email">{{labor.email}}</button></p>
+<p>Address            : {{labor.addr}}</p>
+<input type="submit" name="feedback" value="feedback" id="email" formaction="feedback_results">
+<br>
+</div>
+{% endfor %}
+<br>
+</form>
+</body>

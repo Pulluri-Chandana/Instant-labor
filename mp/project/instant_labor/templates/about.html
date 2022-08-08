@@ -1,0 +1,114 @@
+
+<html>
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+<style>
+    body {
+        font-family: cursive;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .container {
+    margin: -5% auto;
+    color: black;
+    text-align: center;
+    top: 15%;
+    }
+
+    .header {
+    text-align: center;
+    padding-top: 10px;
+}
+.header h2 {
+    color: darkorchid ;
+    font-size: 30px;
+    text-align: center;
+    margin-top:200px; ;
+
+}
+.navi {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: indigo;
+}
+
+.li_class {
+  float: right;
+  
+  text-align: center;
+}
+
+.li_class a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.li_class a:hover {
+  background-color: #111;
+}
+p
+{
+    margin-right: 120px;
+        margin-left: 100px;
+        color: indigo;
+}
+.icons
+{
+    margin-left: 100px;
+    text-align:left;
+    color : indigo;
+}
+</style>
+<ul class = "navi">
+    <li class="li_class"><a class="active" href="{% url 'about' %}">About us</a></li>
+    <li class="li_class"><a class="active" href="{% url 'index' %}"><i class=" fa fa-home"></i>Home</a></li>
+  </ul>
+<body">
+    
+   <!-- <img src="/static/choice.jpg" width=450px> -->
+    <div class="container">
+        <div class="header">
+    <section>
+            <div class = "image">
+              <!-- <img src="https://cdn.pixabay.com/photo/2017/08/26/23/37/business-2684758__340.png"> -->
+            </div>
+
+            <div class = "content">
+
+                <h2 >About Us</h2>
+                <span><!-- line here --></span>
+                <p>These days we get everything on line. We have every service at our doorstep but we cannot find daily labors on line. Like if we are constructing a building or a house then we need daily labors. So then to get them you will have to go to some place and talk to them and fix a deal. Don’t you think it’s a tedious process? Yes, it is. Through this project we can not help the people who are looking for daily labors but also the daily labors who are looking for work too. We are also planning to add features useful to a small size traders.  If they need someone to work at their place, then the options they have is to give advertisements or consulting people or asking others to suggest their requirement . So we want this tedious job to get done simple using our application. We already have applications in these kind of services but those are third parties but our application make sure that there will be a direct communication between employee and employer...!</p>
+                <ul class = "icons">
+                    <li >
+                        <i class = "fa fa-twitter"></i>
+                    </li>
+                    <li>
+                        <i class = "fa fa-facebook"></i>
+                    </li>
+                    <li>
+                        <i class = "fa fa-github"></i>
+                    </li>
+                    <li>
+                        <i class = "fa fa-pinterest"></i>
+                    </li>
+                </ul>
+                
+            </div>
+       <br><br>
+        <div class="credit" style="color : indigo;">Made with <span style="color:tomato">❤</span> by Instant Labour</div>
+        <footer class="background">
+        <p class="text-footer">
+            Copyright ©-All rights are reserved
+        </p>
+  
+    </footer>
+    </section>
+</div>
+</div>
+</body>
+</html>
